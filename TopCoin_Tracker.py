@@ -11,6 +11,9 @@ import pandas as pd
 import streamlit as st
 import datetime
 import time
+from streamlit_autorefresh import st_autorefresh
+
+st_autorefresh(interval=86400000, limit=1)
 
 st.title('TopCoin Tracker')
 
