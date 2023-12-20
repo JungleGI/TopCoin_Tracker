@@ -35,7 +35,7 @@ def getdata(symbol,start_time,end_time):
 
     headers = {
       'Accepts': 'application/json',
-      'authorization': st.secrets['api_key'],
+      'X-CMC_PRO_API_KEY': st.secrets['api_key'],
     }
     
     session = Session()
