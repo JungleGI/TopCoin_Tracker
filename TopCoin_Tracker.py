@@ -11,9 +11,8 @@ import pandas as pd
 import streamlit as st
 import datetime
 import time
-from streamlit_autorefresh import st_autorefresh
 
-st_autorefresh(interval=86400000, limit=1)
+
 
 st.title('TopCoin Tracker')
 
@@ -27,6 +26,7 @@ tickers = ('1','1027','5426','5805','3890','7226','5690','7278','6210','7080','3
 
 
 #Data
+@st.cache_data()
 def getdata(symbol,start_time,end_time):
     url = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/historical'
     parameters = {
